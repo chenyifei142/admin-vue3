@@ -1,0 +1,52 @@
+{
+  "compilerOptions": {
+    /* 指定编译生成的JavaScript代码应该遵循的ECMAScript版本 */
+    "target": "ESNext",
+    /* 指定是否启用ECMAScript的提案，以便在类中声明实例属性时，可以使用类属性初始化器语法 */
+    "useDefineForClassFields": true,
+    /* 指定生成的JavaScript代码使用的模块系统，这里是ESNext，表示使用最新的模块系统。 */
+    "module": "ESNext",
+    /* 指定TypeScript如何解析模块的导入语句。这里是Node，表示使用Node.js的模块解析策略 */
+    "moduleResolution": "Node",
+    /* 指定要包含在编译中的类型声明文件。这里包括了vite/client和element-plus/global，表示编译时需要这两个类型声明文件。 */
+    "types": ["vite/client", "element-plus/global"],
+    /* 开启所有的严格类型检查选项，提高代码的类型安全性 */
+    "strict": true /* Enable all strict type-checking options. */,
+    /* 指定TypeScript如何解析和生成JSX语法。这里是preserve，表示保留原样不变。 */
+    "jsx": "preserve",
+    /* 指定是否支持解析JSON模块。 */
+    "resolveJsonModule": true,
+    /* 指定是否在单独的文件中编译每个文件，以便在每个文件之间创建完全隔离的作用域。 */
+    "isolatedModules": true,
+    /* 指定是否在生成的JavaScript代码中使用ES模块Interop，以方便与其他模块系统进行交互。 */
+    "esModuleInterop": true,
+    /* 指定编译时需要的TypeScript库文件。 */
+    "lib": ["ESNext", "DOM"],
+    /* 指定是否跳过库文件的类型检查，以加快编译速度。 */
+    "skipLibCheck": true,
+    /* 指定编译后是否生成JavaScript代码文件。 */
+    "noEmit": true,
+    /* 指定用于解析非相对模块名称的基本目录，这里是当前目录。 */
+    "baseUrl": "./",
+    /* 指定别名路径的映射，以便在导入时使用简写路径。 */
+    "paths": {
+      "@": ["src"],
+      "@/*": ["src/*"]
+    }
+  },
+  /*
+  include和exclude字段用于指定编译器应该编译的源代码文件和应该忽略的文件。
+  在这里，include字段包括了所有的TypeScript、Vue和Vite配置文件，
+  而exclude字段则排除了node_modules、dist文件夹和所有的JavaScript文件。
+  */
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "build/**/*.ts",
+    "build/**/*.d.ts",
+    "vite.config.ts"
+  ],
+  "exclude": ["node_modules", "dist"]
+}
